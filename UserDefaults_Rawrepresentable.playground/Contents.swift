@@ -3,13 +3,10 @@
 import UIKit
 
 extension UserDefaults {
-    
     subscript(key: PreferenceKey<String>) -> String? {
         set { set(newValue, forKey: key.rawValue) }
         get { return string(forKey: key.rawValue) }
     }
-    
-    
 }
 
 struct PreferenceKey<Type>: RawRepresentable {
@@ -22,11 +19,6 @@ struct PreferenceKey<Type>: RawRepresentable {
     }
 }
 
-struct PreferenceNames {
-    
-    
-}
-
 extension UserDefaults {
     static let userNameKey = PreferenceKey<String>(rawValue: "userName")!
     
@@ -35,5 +27,7 @@ extension UserDefaults {
         get { return UserDefaults.standard[userNameKey]! }
     }
 }
+
+UserDefaults.userName = "asdf"
 
 
